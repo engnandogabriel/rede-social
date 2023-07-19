@@ -2,20 +2,44 @@ a {
   text-decoration: none;
   margin: 0;
   padding: 0;
+  color:#333;
+  
 }
 
 body {
+  padding: 4rem;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #333;
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-second:'Spectral', georgia 
+  --font-family: var(--type-first);
+  --background-one:#fb1;
+  --background-two:#eee;
+  --color-one:#764701;
+  --color-two:#fea;
 }
 
-h1 {
+h1, h2,h3,h4,p {
   margin: 0;
   padding: 0;
 }
 
-button {
+ul,li{
+  list-style: none;
   margin: 0;
   padding: 0;
 }
+
+img{
+  display: block;
+  max-width: 100%;
+}
+
+button, input {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
