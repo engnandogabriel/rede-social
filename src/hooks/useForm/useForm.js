@@ -26,7 +26,6 @@ const useForm = (type) => {
     }
 
     if (types[type] && !types[type].regex.test(value)) {
-      console.log(types[type].message);
       setErro(types[type].message);
       return false;
     }

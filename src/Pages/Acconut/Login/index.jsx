@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Input from "../../../componets/Inputs";
 import Button from "../../../componets/Button/index";
@@ -5,14 +6,19 @@ import { TextLink, Title, TextParag } from "../../../styles/Text";
 import useForm from "../../../hooks/useForm/useForm";
 import { ContainerRegister } from "../../../styles/Container";
 
+import { GlobalUserContext } from "../../../context/UserContext/UserContext";
+
 const Login = () => {
+  const { loginUser } = useContext(GlobalUserContext);
+
   const userName = useForm("email");
   const password = useForm();
-  console.log(userName);
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (userName.validate && password.validate) alert("validado");
+    if (userName.validate() && password.validate()) {
+      loginUser(userName, password);
+    }
   }
 
   return (
@@ -29,7 +35,7 @@ const Login = () => {
       </form>
 
       <Link to="/login/forgot">
-        <TextLink>Perdeu a conta</TextLink>
+        <TextLink>Perdeu a senha?</TextLink>
       </Link>
       <ContainerRegister>
         <Title>Cadastre-se</Title>

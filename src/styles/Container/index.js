@@ -21,14 +21,21 @@ export const Container = styled.section`
   }
 
   .form-container {
-    opacity: 0;
+    /* opacity: 0; */
     transform: translateX(-20px);
-    animation: animateLeft 0.3s forwards;
+    animation: animateLeft 0.5s forwards;
+    margin-top: 20vh;
   }
   @keyframes animateLeft {
-    to {
+    0% {
+      opacity: 0;
+    }
+    50% {
       opacity: 1;
-      transform: initial;
+      transform: translateX(50px);
+    }
+    100% {
+      transform: inherit;
     }
   }
 `;

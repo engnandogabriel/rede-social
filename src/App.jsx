@@ -4,17 +4,21 @@ import Footer from "./Pages/Footer/index";
 import Home from "./Pages/home/index";
 import LoginRoutes from "./Pages/Acconut/LoginRoutes/index";
 
+import { StorageUserContext } from "./context/UserContext/UserContext";
+
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login/*" element={<LoginRoutes />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <StorageUserContext>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login/*" element={<LoginRoutes />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </StorageUserContext>
     </>
   );
 };
