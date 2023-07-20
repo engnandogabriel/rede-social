@@ -2,22 +2,22 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Input from "../../../componets/Inputs";
 import Button from "../../../componets/Button/index";
-import { TextLink, Title, TextParag } from "../../../styles/Text";
+import { TextLink, Title, TextParag, TextError } from "../../../styles/Text";
 import useForm from "../../../hooks/useForm/useForm";
 import { ContainerRegister } from "../../../styles/Container";
 
 import { GlobalUserContext } from "../../../context/UserContext/UserContext";
 
 const Login = () => {
-  const { loginUser } = useContext(GlobalUserContext);
+  const { userLogin, load, erro } = useContext(GlobalUserContext);
 
-  const userName = useForm("email");
-  const password = useForm();
+  const userName = useForm(false);
+  const password = useForm(false);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     if (userName.validate() && password.validate()) {
-      loginUser(userName, password);
+      await userLogin(userName.value, password.value);
     }
   }
 
@@ -27,11 +27,12 @@ const Login = () => {
         <Title>Login</Title>
         <div>
           <Input label="Usuario" type="text" name="username" {...userName} />
+          {erro && <TextError>Usuário ou senha inválidos</TextError>}
         </div>
         <div>
           <Input label="Senha" type="password" name="password" {...password} />
         </div>
-        <Button>Entrar</Button>
+        {load ? <Button>Carregando...</Button> : <Button>Entrar</Button>}
       </form>
 
       <Link to="/login/forgot">
