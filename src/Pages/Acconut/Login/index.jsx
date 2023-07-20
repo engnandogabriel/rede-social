@@ -22,30 +22,37 @@ const Login = () => {
   }
 
   return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit}>
-        <Title>Login</Title>
-        <div>
-          <Input label="Usuario" type="text" name="username" {...userName} />
+    <>
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <Title>Login</Title>
+          <div>
+            <Input label="Usuario" type="text" name="username" {...userName} />
+          </div>
+          <div>
+            <Input
+              label="Senha"
+              type="password"
+              name="password"
+              {...password}
+            />
+          </div>
           {erro && <TextError>Usuário ou senha inválidos</TextError>}
-        </div>
-        <div>
-          <Input label="Senha" type="password" name="password" {...password} />
-        </div>
-        {load ? <Button>Carregando...</Button> : <Button>Entrar</Button>}
-      </form>
+          {load ? <Button>Carregando...</Button> : <Button>Entrar</Button>}
+        </form>
 
-      <Link to="/login/forgot">
-        <TextLink>Perdeu a senha?</TextLink>
-      </Link>
-      <ContainerRegister>
-        <Title>Cadastre-se</Title>
-        <TextParag>Ainda não possui conta? Registre-se agora</TextParag>
-        <Link to="/login/register">
-          <Button>Cadastre-se</Button>
+        <Link to="/login/forgot">
+          <TextLink>Perdeu a senha?</TextLink>
         </Link>
-      </ContainerRegister>
-    </div>
+        <ContainerRegister>
+          <Title>Cadastre-se</Title>
+          <TextParag>Ainda não possui conta? Registre-se agora</TextParag>
+          <Link to="/login/register">
+            <Button>Cadastre-se</Button>
+          </Link>
+        </ContainerRegister>
+      </div>
+    </>
   );
 };
 

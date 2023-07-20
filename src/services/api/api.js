@@ -34,3 +34,12 @@ export const VALIDATE_TOKEN = async (token) => {
   //   },
   // });
 };
+
+export const CREATE_USER = async (body) => {
+  console.log(body);
+  return await axios.post(`${url}/api/user`, {
+    username: body.username,
+    email: body.email,
+    password: body.password,
+  });
+};

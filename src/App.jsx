@@ -9,16 +9,17 @@ import { StorageUserContext } from "./context/UserContext/UserContext";
 const App = () => {
   return (
     <>
-      <StorageUserContext>
-        <BrowserRouter>
+      <BrowserRouter>
+        <StorageUserContext>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login/*" element={<LoginRoutes />} />
+            <Route path="/dashboard/*" element={<LoginRoutes />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
-      </StorageUserContext>
+        </StorageUserContext>
+      </BrowserRouter>
     </>
   );
 };

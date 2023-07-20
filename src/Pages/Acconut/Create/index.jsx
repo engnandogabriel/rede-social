@@ -1,13 +1,23 @@
-import { Title } from "../../../styles/Text";
+import { useContext } from "react";
+import { TextError, Title } from "../../../styles/Text";
 import Input from "../../../componets/Inputs";
 import Button from "../../../componets/Button";
 import useForm from "../../../hooks/useForm/useForm";
 
+import { GlobalUserContext } from "../../../context/UserContext/UserContext";
+
 const Create = () => {
+  const { createUser, erro, load } = useContext(GlobalUserContext);
+
   const userName = useForm();
   const email = useForm("email");
-  const password = useForm();
-  function handleSubmit() {}
+  const password = useForm("password");
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (userName.validate() && email.validate && password.validate()) {
+      createUser(userName.value, email.value, password.value);
+    }
+  }
 
   return (
     <>
@@ -23,7 +33,8 @@ const Create = () => {
           <div>
             <Input label="Senha" type="text" name="username" {...password} />
           </div>
-          <Button>Cadastrar</Button>
+          {erro && <TextError>{erro}</TextError>}
+          {load ? <Button>Carregando</Button> : <Button>Cadastrar</Button>}
         </form>
       </div>
     </>
