@@ -53,4 +53,5 @@ export const FormConatiner = styled.div`
 export const ContainerDashboard = styled.div`
   max-width: 50rem;
   margin: 0 auto;
+  padding: 1rem 1rem;
 `;

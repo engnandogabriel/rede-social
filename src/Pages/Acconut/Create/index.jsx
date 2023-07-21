@@ -31,7 +31,12 @@ const Create = () => {
             <Input label="E-mail " type="text" name="email" {...email} />
           </div>
           <div>
-            <Input label="Senha" type="text" name="username" {...password} />
+            <Input
+              label="Senha"
+              type="password"
+              name="password"
+              {...password}
+            />
           </div>
           {erro && <TextError>{erro}</TextError>}
           {load ? <Button>Carregando</Button> : <Button>Cadastrar</Button>}

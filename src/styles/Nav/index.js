@@ -13,6 +13,7 @@ export const NavStyle = styled.nav`
   .login-user {
     color: #333;
     font-size: 20px;
+    padding: 0 1rem;
   }
 `;
 export const HeaderStyle = styled.header`
@@ -30,7 +31,7 @@ export const HeaderDasboard = styled.header`
   align-items: center;
 `;
 
-export const NavDashboard = styled.nav`
+export const NavDashboardStyled = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,5 +67,41 @@ export const NavDashboard = styled.nav`
   }
   .active > svg > * {
     fill: rgb(255, 187, 17);
+  }
+`;
+
+export const NavDashboardMobileStyled = styled.nav`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 150px;
+  right: 0;
+  padding: 0 1rem;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 0.2rem;
+  transform: translateX(-10px);
+  opacity: 0;
+  pointer-events: none;
+
+  a,
+  button {
+    display: flex;
+    align-items: center;
+    background: none;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 0.5rem 0;
+    cursor: pointer;
+  }
+
+  a:hover svg > *,
+  button:hover svg > * {
+    fill: #fb1;
+  }
+
+  svg {
+    margin-right: 0.5rem;
   }
 `;

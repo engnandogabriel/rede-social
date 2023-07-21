@@ -27,16 +27,18 @@ export const ButtonMobile = styled.button`
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  transform: 0.1s;
+
   cursor: pointer;
   padding: 0;
 
   &:focus,
-  &:hover {
+  &:hover,
+  .menuMobileActive {
     outline: none;
     background-color: #fff;
     box-shadow: 0 0 0 3px #fea;
     border-color: #fb1;
+    color: #fb1;
   }
 
   &::after {
@@ -47,5 +49,6 @@ export const ButtonMobile = styled.button`
     background-color: currentColor;
     border-radius: 2px;
     box-shadow: 0px 6px currentColor, 0px -6px currentColor;
+    transition: 0.2s;
   }
 `;
