@@ -6,19 +6,22 @@ import LoginRoutes from "./Pages/Acconut/LoginRoutes/index";
 import DashboardRoutes from "./Pages/DashBoard/DashboardRoutes";
 // import ProtectedRoute from "./Routes/ProtectedRoutes";
 import { StorageUserContext } from "./context/UserContext/UserContext";
+import { StorageDashboardContext } from "./context/DashboardContext/DashboardContext";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <StorageUserContext>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="login/*" element={<LoginRoutes />} />
-            <Route path="dashboard/*" element={<DashboardRoutes />} />
-          </Routes>
-          <Footer />
+          <StorageDashboardContext>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="login/*" element={<LoginRoutes />} />
+              <Route path="dashboard/*" element={<DashboardRoutes />} />
+            </Routes>
+            <Footer />
+          </StorageDashboardContext>
         </StorageUserContext>
       </BrowserRouter>
     </>

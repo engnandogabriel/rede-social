@@ -4,6 +4,7 @@ export const Title = styled.h2`
   font-size: 3rem;
   font-family: var(--type-second);
   position: relative;
+  word-break: keep-all;
 
   &::after {
     content: "";

@@ -15,7 +15,7 @@ const LoginRoutes = () => {
 
   return (
     <Container>
-      <FormConatiner>
+      <FormConatiner marginLeft="1rem" display="block">
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Create />} />

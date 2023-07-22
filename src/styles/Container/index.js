@@ -16,38 +16,41 @@ export const Container = styled.section`
     background-size: cover;
   }
 
-  div {
-    width: 400px;
-  }
-
-  .form-container {
-    /* opacity: 0; */
-    transform: translateX(-20px);
-    animation: animateLeft 0.5s forwards;
-    margin-top: 20vh;
-  }
-  @keyframes animateLeft {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-      transform: translateX(50px);
-    }
-    100% {
-      transform: inherit;
+  @media (max-width: 640px) {
+    &::before {
+      display: none;
     }
   }
-`;
-
-export const ContainerRegister = styled.div`
-  margin-top: 4rem;
-  margin-bottom: 4rem;
 `;
 
 export const FormConatiner = styled.div`
+  display: ${(props) => props.display || "grid"};
+  grid-template-columns: 1fr 1fr;
   margin-top: 4rem;
   margin-bottom: 4rem;
+  margin-left: ${(props) => props.marginLeft || "0rem"};
+  width: 20rem;
+  gap: 2rem;
+
+  @media (max-width: 50rem) {
+    grid-template-columns: 1fr;
+  }
+  div {
+    width: 300px;
+  }
+  .img-preview {
+    width: 300px;
+    border-radius: 1rem;
+    background-size: cover;
+    background-position: center center;
+  }
+`;
+
+export const ContainerCreateUser = styled.div`
+  display: block;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  gap: 2rem;
 `;
 
 export const ContainerDashboard = styled.div`

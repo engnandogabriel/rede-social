@@ -36,10 +36,31 @@ export const VALIDATE_TOKEN = async (token) => {
 };
 
 export const CREATE_USER = async (body) => {
-  console.log(body);
   return await axios.post(`${url}/api/user`, {
     username: body.username,
     email: body.email,
     password: body.password,
   });
 };
+
+// export const PHOTO_POST = async (formData, token) => {
+//   formData.forEach((data) => {
+//     console.log(data);
+//   });
+//   return axios.post(`${url}/api/user`, formData, {
+//     headers: {
+//       Authorization: "Bearer " + token,
+//     },
+//   });
+// };
+
+export async function PHOTO_POST(formData, token) {
+  console.log(token);
+  return await fetch(`${url}/api/photo`, {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+    body: formData,
+  });
+}

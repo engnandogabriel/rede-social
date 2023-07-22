@@ -1,15 +1,14 @@
 import { useContext } from "react";
 import { NavStyle, HeaderStyle } from "../../styles/Nav/index";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { ReactComponent as Logo } from "../../assets/dogs.svg";
 import { ReactComponent as User } from "../../assets/usuario.svg";
-import { ReactComponent as Logout } from "../../assets/sair.svg";
 
 import { GlobalUserContext } from "../../context/UserContext/UserContext";
 
 const Header = () => {
-  const { dataUser, loged, logoutUser } = useContext(GlobalUserContext);
+  const { dataUser, loged } = useContext(GlobalUserContext);
 
   if (loged)
     return (
@@ -20,10 +19,10 @@ const Header = () => {
               <Logo />
             </Link>
             <div className="login-user">
-              <Link onClick={() => logoutUser()}>
+              <NavLink to="/dashboard">
                 {dataUser.username}
-                <Logout />{" "}
-              </Link>
+                <User />{" "}
+              </NavLink>
             </div>
           </NavStyle>
         </HeaderStyle>

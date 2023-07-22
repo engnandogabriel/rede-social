@@ -4,7 +4,7 @@ import Input from "../../../componets/Inputs";
 import Button from "../../../componets/Button/index";
 import { TextLink, Title, TextParag, TextError } from "../../../styles/Text";
 import useForm from "../../../hooks/useForm/useForm";
-import { ContainerRegister } from "../../../styles/Container";
+import { ContainerCreateUser } from "../../../styles/Container";
 
 import { GlobalUserContext } from "../../../context/UserContext/UserContext";
 
@@ -23,7 +23,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="form-container">
+      <div className="aniamteLeft">
         <form onSubmit={handleSubmit}>
           <Title>Login</Title>
           <div>
@@ -44,13 +44,13 @@ const Login = () => {
         <Link to="/login/forgot">
           <TextLink>Perdeu a senha?</TextLink>
         </Link>
-        <ContainerRegister>
+        <ContainerCreateUser>
           <Title>Cadastre-se</Title>
           <TextParag>Ainda não possui conta? Registre-se agora</TextParag>
           <Link to="/login/register">
             <Button>Cadastre-se</Button>
           </Link>
-        </ContainerRegister>
+        </ContainerCreateUser>
       </div>
     </>
   );

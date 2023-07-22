@@ -69,3 +69,22 @@ button, input {
   opacity: 1 !important;
   pointer-events: initial !important;
 }
+
+
+.aniamteLeft {
+  transform: translateX(-20px);
+  animation: animateLeft 0.5s forwards;
+  margin-top: 20vh;
+}
+@keyframes animateLeft {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(50px);
+  }
+  100% {
+    transform: inherit;
+  }
+}
