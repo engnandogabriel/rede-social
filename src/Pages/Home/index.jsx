@@ -1,9 +1,14 @@
 // import React from "react";
 
+import { ContainerFeed } from "../../styles/Container";
+import Feed from "../Feed/index";
+
 const Home = () => {
   return (
     <>
-      <h2>Home</h2>
+      <ContainerFeed>
+        <Feed />
+      </ContainerFeed>
     </>
   );
 };

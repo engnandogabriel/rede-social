@@ -8,6 +8,7 @@ a {
 }
 
 body {
+  overflow-x: hidden;
   padding: 4rem;
   box-sizing: border-box;
   margin: 0;
@@ -87,4 +88,21 @@ button, input {
   100% {
     transform: inherit;
   }
+}
+
+.modal {
+  position: fixed ;  
+  width: 100vw;
+  height: 100vh;
+  top: -20px;
+  left: -70px;
+  background-color:rgba(0,0,0,0.4);
+  z-index: 1000;
+  display: flex;
+  padding: 2rem calc(4rem + 15px ) 2rem 4rem ;
+
+  @media (max-width:40rem) {
+    padding: 2rem calc(2rem + 15px ) 2rem 2rem ;
+  }
+
 }

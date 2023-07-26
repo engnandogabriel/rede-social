@@ -16,11 +16,7 @@ const Load = styled.div`
 `;
 
 const LoadGlobal = () => {
-  return (
-    <Load>
-      <LoadIcon />
-    </Load>
-  );
+  return <h2>Carregando</h2>;
 };
 
 export default LoadGlobal;

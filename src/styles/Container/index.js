@@ -23,6 +23,13 @@ export const Container = styled.section`
   }
 `;
 
+export const ContainerFeed = styled.div`
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+  margin-top: 4rem;
+`;
+
 export const FormConatiner = styled.div`
   display: ${(props) => props.display || "grid"};
   grid-template-columns: 1fr 1fr;

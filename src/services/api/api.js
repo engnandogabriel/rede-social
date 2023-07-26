@@ -28,11 +28,6 @@ export const VALIDATE_TOKEN = async (token) => {
   });
   const json = await response.json();
   return json;
-  // return axios.post(`${url}/jwt-auth/v1/token/validate`, {
-  //   headers: {
-  //     Authorization: "Bearer " + token,
-  //   },
-  // });
 };
 
 export const CREATE_USER = async (body) => {
@@ -43,19 +38,7 @@ export const CREATE_USER = async (body) => {
   });
 };
 
-// export const PHOTO_POST = async (formData, token) => {
-//   formData.forEach((data) => {
-//     console.log(data);
-//   });
-//   return axios.post(`${url}/api/user`, formData, {
-//     headers: {
-//       Authorization: "Bearer " + token,
-//     },
-//   });
-// };
-
-export async function PHOTO_POST(formData, token) {
-  console.log(token);
+export const PHOTO_POST = async (formData, token) => {
   return await fetch(`${url}/api/photo`, {
     method: "POST",
     headers: {
@@ -63,4 +46,21 @@ export async function PHOTO_POST(formData, token) {
     },
     body: formData,
   });
-}
+};
+
+export const PHOTOS_GET = async ({ page, total, user }) => {
+  return await fetch(
+    `${url}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    {
+      method: "GET",
+      cache: "no-store",
+    }
+  );
+};
+
+export const PHOTO_GET = async (id) => {
+  return await fetch(`${url}/api/photo/${id}`, {
+    method: "GET",
+    cache: "no-store",
+  });
+};
