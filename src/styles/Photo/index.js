@@ -85,6 +85,42 @@ export const PhotoContentStyled = styled.div`
   }
 `;
 
-export const PhotoCommentStyled = styled.div`
-  padding: 0px 2rem;
+export const PhotoCommentContentStyled = styled.div`
+  overflow-y: auto;
+  max-height: 270px;
+  word-wrap: break-word;
+  padding: 0 1.2rem;
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+`;
+export const PhotoCommentFormStyled = styled.form`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin: 1rem;
+
+  textarea {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    font-family: var(--type-first);
+    resize: none;
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    border-radius: 0.2rem;
+    background-color: #eee;
+    transition: 0.2s;
+  }
+
+  textarea:hover,
+  textarea:focus {
+    outline: none;
+    border-color: var(--background-one);
+    background: #fff;
+
+    box-shadow: 0 0 0 3px var(--color-two);
+  }
 `;

@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { PhotoContentStyled } from "../../../styles/Photo";
 import { Title } from "../../../styles/Text";
 
-import PhotoCommentes from "../PhotoCommentes";
+// import PhotoCommentContent from "../PhotoComments/CommentsContent/index";
+import PhotoComment from "../PhotoComments/index";
 
 const PhotoContent = ({ data }) => {
-  console.log(data);
   const { photo, comments } = data;
 
   if (!photo || !comments) return null;
@@ -30,7 +30,7 @@ const PhotoContent = ({ data }) => {
           </li>
         </ul>
       </div>
-      <PhotoCommentes id={photo.id} comments={comments} />
+      <PhotoComment id={photo.id} comments={comments} />
     </PhotoContentStyled>
   );
 };

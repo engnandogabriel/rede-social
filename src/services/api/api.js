@@ -1,4 +1,5 @@
 import axios from "axios";
+import { json } from "react-router-dom";
 //api/user -- pegar token
 //https://dogsapi.origamid.dev/json
 
@@ -62,5 +63,16 @@ export const PHOTO_GET = async (id) => {
   return await fetch(`${url}/api/photo/${id}`, {
     method: "GET",
     cache: "no-store",
+  });
+};
+
+export const PHOTO_COMMENT_POST = async (id, body, token) => {
+  return await fetch(`${url}/api/comment/${id}`, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+    body: JSON.stringify(body),
   });
 };

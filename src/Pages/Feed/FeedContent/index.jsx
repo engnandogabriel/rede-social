@@ -18,7 +18,7 @@ const FeedContent = ({ setPhotoModal }) => {
     getPhotho();
   }, []);
   if (erro) return <Title>{erro}</Title>;
-  if (load) return <Title>Carregando</Title>;
+  // if (load) return <Title>Carregando</Title>;
   if (dataPhotos.length > 0)
     return (
       <FeedUlStyled className="aniamteLeft">

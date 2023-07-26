@@ -1,5 +1,10 @@
 import { createContext, useState } from "react";
-import { PHOTO_POST, PHOTOS_GET, PHOTO_GET } from "../../services/api/api";
+import {
+  PHOTO_POST,
+  PHOTOS_GET,
+  PHOTO_GET,
+  PHOTO_COMMENT_POST,
+} from "../../services/api/api";
 import { useNavigate } from "react-router-dom";
 
 export const GlobalDashboardContext = createContext();
@@ -49,7 +54,6 @@ export const StorageDashboardContext = ({ children }) => {
 
   async function fetchOnePhoto(id) {
     try {
-      console.log(id);
       setLoad(true);
       setErro(null);
       const response = await (await PHOTO_GET(id)).json();
@@ -61,12 +65,26 @@ export const StorageDashboardContext = ({ children }) => {
     }
   }
 
+  async function photoCommentPost(id, body) {
+    try {
+      setLoad(true);
+      const token = window.localStorage.getItem("token");
+      const response = await (await PHOTO_COMMENT_POST(id, body, token)).json();
+      return response;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoad(false);
+    }
+  }
+
   return (
     <GlobalDashboardContext.Provider
       value={{
         photoPost,
         fetchPhotos,
         fetchOnePhoto,
+        photoCommentPost,
         load,
         erro,
         dataPhotos,

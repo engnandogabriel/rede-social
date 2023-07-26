@@ -70,8 +70,7 @@ export const StorageUserContext = ({ children }) => {
     try {
       setErro(null);
       setLoad(true);
-      const response = await CREATE_USER({ username, email, password });
-      console.log(response);
+      CREATE_USER({ username, email, password });
       await userLogin(username, password);
     } catch (error) {
       setErro("Usuário não cadastrado");

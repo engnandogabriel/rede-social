@@ -52,3 +52,36 @@ export const ButtonMobile = styled.button`
     transition: 0.2s;
   }
 `;
+
+export const ButtonCommentStyled = styled.button`
+  border: none;
+  cursor: pointer;
+  color: #333;
+  background: transparent;
+  font-size: 1rem;
+  overflow: hidden;
+
+  &:focus,
+  &:hover {
+    svg path {
+      fill: #fb1;
+      stroke: #fea;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    svg g {
+      animation: latir 0.6s infinite;
+    }
+  }
+
+  @keyframes latir {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;
