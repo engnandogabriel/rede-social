@@ -28,7 +28,7 @@ const App = () => {
                 element={<DashboardRoutes />}
               /> */}
             </Routes>
-            <Footer />
+            {/* <Footer /> */}
           </StorageDashboardContext>
         </StorageUserContext>
       </BrowserRouter>

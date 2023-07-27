@@ -2,18 +2,18 @@ import { useState } from "react";
 import { LoadImageStyled } from "../../styles/Load";
 
 const LoadImage = ({ alt, ...props }) => {
-  const [skelecton, setSkelecton] = useState(true);
+  const [skeleton, setSkeleton] = useState(true);
 
   function handleLoad({ target }) {
-    setSkelecton(false);
-    console.log(target);
+    setSkeleton(false);
     target.style.opacity = 1;
   }
 
   return (
     <LoadImageStyled>
-      {skelecton == true && <div className="skeleton-load"></div>}
-      <img onLoad={handleLoad} {...props} alt={alt} className="image-load" />
+      {skeleton && <div className="skeleton-load"></div>}
+      {/* <div className="skeleton-load"></div> */}
+      <img onLoad={handleLoad} className="image-load" alt={alt} {...props} />
     </LoadImageStyled>
   );
 };

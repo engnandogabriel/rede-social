@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import FeedPhotos from "../FeedPhotos/index";
+import LoadGlobal from "../../../componets/LoadGlobal";
 
 import { Title } from "../../../styles/Text";
 import { FeedUlStyled } from "../../../styles/Feed";
@@ -7,7 +8,7 @@ import { FeedUlStyled } from "../../../styles/Feed";
 import { GlobalDashboardContext } from "../../../context/DashboardContext/DashboardContext";
 
 const FeedContent = ({ setPhotoModal }) => {
-  const { fetchPhotos, erro, load, dataPhotos } = useContext(
+  const { fetchPhotos, erro, loadGlobal, dataPhotos } = useContext(
     GlobalDashboardContext
   );
 
@@ -18,7 +19,7 @@ const FeedContent = ({ setPhotoModal }) => {
     getPhotho();
   }, []);
   if (erro) return <Title>{erro}</Title>;
-  // if (load) return <Title>Carregando</Title>;
+  if (loadGlobal) return <LoadGlobal />;
   if (dataPhotos.length > 0)
     return (
       <FeedUlStyled className="aniamteLeft">

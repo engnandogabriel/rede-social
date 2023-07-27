@@ -13,6 +13,7 @@ export const GlobalDashboardContext = createContext();
 export const StorageDashboardContext = ({ children }) => {
   const navigate = useNavigate();
   const [load, setLoad] = useState(false);
+  const [loadGlobal, setLoadGlobal] = useState(false);
   const [erro, setErro] = useState(null);
   const [dataPhotos, setDataPhotos] = useState({});
   const [dataPhoto, setDataPhoto] = useState({});
@@ -38,7 +39,7 @@ export const StorageDashboardContext = ({ children }) => {
 
   async function fetchPhotos() {
     try {
-      setLoad(true);
+      setLoadGlobal(true);
       const response = await (
         await PHOTOS_GET({ page: 1, total: 6, user: 0 })
       ).json();
@@ -49,7 +50,7 @@ export const StorageDashboardContext = ({ children }) => {
       setDataPhotos({});
       console.log(error);
     } finally {
-      setLoad(false);
+      setLoadGlobal(false);
     }
   }
 
@@ -101,6 +102,7 @@ export const StorageDashboardContext = ({ children }) => {
         photoCommentPost,
         deletePhoto,
         load,
+        loadGlobal,
         erro,
         dataPhotos,
         dataPhoto,
