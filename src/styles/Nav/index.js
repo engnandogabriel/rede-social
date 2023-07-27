@@ -39,7 +39,6 @@ export const NavDashboardStyled = styled.nav`
 
   a {
     background: var(--background-two);
-    box-shadow: rgb(255, 238, 170) 0px 0px 0px 3px;
     border-color: var(--background-one);
     border-radius: 0.2rem;
     height: 40px;
@@ -83,6 +82,8 @@ export const NavDashboardMobileStyled = styled.nav`
   transform: translateX(-10px);
   opacity: 0;
   pointer-events: none;
+
+  z-index: 100;
 
   a,
   button {

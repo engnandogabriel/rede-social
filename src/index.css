@@ -75,7 +75,7 @@ button, input {
 .aniamteLeft {
   transform: translateX(-20px);
   animation: animateLeft 0.5s forwards;
-  margin-top: 20vh;
+  /* margin-top: 20vh; */
 }
 @keyframes animateLeft {
   0% {

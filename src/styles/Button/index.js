@@ -85,3 +85,46 @@ export const ButtonCommentStyled = styled.button`
     }
   }
 `;
+
+export const PhotoDeleteButtonStyled = styled.button`
+  background: rgb(221, 221, 221);
+  padding: 0.3rem 0.6rem;
+  line-height: 1;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  font-family: var(--type-first);
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: all 0.1s ease 0s;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(238, 238, 238) 0px 0px 0px 3px;
+    border-color: rgb(51, 51, 51);
+  }
+`;
+
+export const ButtonLogouStyled = styled.button`
+  background: var(--background-two);
+  border-color: var(--background-one);
+  border-radius: 0.2rem;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  transition: all 0.1s ease 0s;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: var(--background-two);
+    box-shadow: rgb(255, 238, 170) 0px 0px 0px 3px;
+    border-color: var(--background-one);
+  }
+`;

@@ -4,6 +4,7 @@ import {
   PHOTOS_GET,
   PHOTO_GET,
   PHOTO_COMMENT_POST,
+  DELTE_PHOTO,
 } from "../../services/api/api";
 import { useNavigate } from "react-router-dom";
 
@@ -78,6 +79,19 @@ export const StorageDashboardContext = ({ children }) => {
     }
   }
 
+  async function deletePhoto(id) {
+    try {
+      setLoad(true);
+      const token = window.localStorage.getItem("token");
+      const response = await DELTE_PHOTO(id, token);
+      return response;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoad(false);
+    }
+  }
+
   return (
     <GlobalDashboardContext.Provider
       value={{
@@ -85,6 +99,7 @@ export const StorageDashboardContext = ({ children }) => {
         fetchPhotos,
         fetchOnePhoto,
         photoCommentPost,
+        deletePhoto,
         load,
         erro,
         dataPhotos,

@@ -8,6 +8,10 @@ import DashboardRoutes from "./Pages/DashBoard/DashboardRoutes";
 import { StorageUserContext } from "./context/UserContext/UserContext";
 import { StorageDashboardContext } from "./context/DashboardContext/DashboardContext";
 
+{
+  /* <ProtectedRoute path="conta/*" element={<User />} /> */
+}
+
 const App = () => {
   return (
     <>
@@ -18,7 +22,11 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="login/*" element={<LoginRoutes />} />
-              <Route path="dashboard/*" element={<DashboardRoutes />} />
+              <Route path="/dashboard/*" element={<DashboardRoutes />} />
+              {/* <ProtectedRoute
+                path="dashboard/*"
+                element={<DashboardRoutes />}
+              /> */}
             </Routes>
             <Footer />
           </StorageDashboardContext>

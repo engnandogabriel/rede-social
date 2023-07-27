@@ -10,6 +10,8 @@ import { ReactComponent as Sair } from "../../../../assets/sair.svg";
 
 import { GlobalUserContext } from "../../../../context/UserContext/UserContext";
 
+import ButtonLogout from "../../../../componets/Button/ButtonLogot";
+
 const Navdashboard = () => {
   const { logoutUser } = useContext(GlobalUserContext);
 
@@ -25,9 +27,9 @@ const Navdashboard = () => {
         <Adicionar />
       </NavLink>
 
-      <button onClick={logoutUser}>
+      <ButtonLogout handleClick={logoutUser}>
         <Sair />
-      </button>
+      </ButtonLogout>
     </NavDashboardStyled>
   );
 };

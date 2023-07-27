@@ -76,3 +76,12 @@ export const PHOTO_COMMENT_POST = async (id, body, token) => {
     body: JSON.stringify(body),
   });
 };
+
+export const DELTE_PHOTO = async (id, token) => {
+  return await fetch(`${url}/api/photo/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });
+};

@@ -2,22 +2,31 @@ import { Link } from "react-router-dom";
 import { PhotoContentStyled } from "../../../styles/Photo";
 import { Title } from "../../../styles/Text";
 
-// import PhotoCommentContent from "../PhotoComments/CommentsContent/index";
+import { GlobalUserContext } from "../../../context/UserContext/UserContext";
+
 import PhotoComment from "../PhotoComments/index";
+import ButtonDeletePhoto from "../PhotoDelete/index";
+import LoadImage from "../../../componets/LoadImage/index";
+import { useContext } from "react";
 
 const PhotoContent = ({ data }) => {
+  const { dataUser, loged } = useContext(GlobalUserContext);
   const { photo, comments } = data;
 
   if (!photo || !comments) return null;
   return (
     <PhotoContentStyled>
-      {/* <div className="modalContent"> */}
       <div className="photoModalImg">
-        <img src={photo.src} alt={photo.title} />
+        <LoadImage src={photo.src} alt={photo.title} />
       </div>
       <div className="modalContentDetails">
         <p className="modalAuthor">
-          <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+          {dataUser && dataUser.username === photo.author ? (
+            <ButtonDeletePhoto id={photo.id} />
+          ) : (
+            <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+          )}
+
           <span className="ModalVizualizacao">{photo.acessos}</span>
         </p>
         <Title>
