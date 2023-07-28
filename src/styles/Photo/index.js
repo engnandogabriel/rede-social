@@ -87,13 +87,17 @@ export const PhotoContentStyled = styled.div`
 
 export const PhotoCommentContentStyled = styled.div`
   overflow-y: auto;
-  max-height: 270px;
+  height: 270px;
   word-wrap: break-word;
   padding: 0 1.2rem;
 
   li {
     margin-bottom: 0.5rem;
     line-height: 1.2;
+  }
+
+  @media (max-width: 64rem) {
+    height: 100px;
   }
 `;
 export const PhotoCommentFormStyled = styled.form`

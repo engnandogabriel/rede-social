@@ -51,7 +51,8 @@ export const PHOTO_POST = async (formData, token) => {
 
 export const PHOTOS_GET = async ({ page, total, user }) => {
   return await fetch(
-    `${url}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    `${url}/api/photo/?_page=${page}&_total=3&_user=${user}`,
+
     {
       method: "GET",
       cache: "no-store",

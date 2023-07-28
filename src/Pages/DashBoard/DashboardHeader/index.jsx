@@ -36,7 +36,7 @@ const DashboaredHeader = () => {
 
   return (
     <HeaderDasboard>
-      <Title>Title</Title>
+      <Title>{title}</Title>
       <Navdashboard />
     </HeaderDasboard>
   );

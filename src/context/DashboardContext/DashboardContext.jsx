@@ -15,7 +15,6 @@ export const StorageDashboardContext = ({ children }) => {
   const [load, setLoad] = useState(false);
   const [loadGlobal, setLoadGlobal] = useState(false);
   const [erro, setErro] = useState(null);
-  const [dataPhotos, setDataPhotos] = useState({});
   const [dataPhoto, setDataPhoto] = useState({});
 
   async function photoPost(formData) {
@@ -37,17 +36,15 @@ export const StorageDashboardContext = ({ children }) => {
     }
   }
 
-  async function fetchPhotos() {
+  async function fetchPhotos(page, user) {
     try {
       setLoadGlobal(true);
       const response = await (
-        await PHOTOS_GET({ page: 1, total: 6, user: 0 })
+        await PHOTOS_GET({ page: page, total: 6, user: user })
       ).json();
-      setDataPhotos(response);
-      return;
+      return response;
     } catch (error) {
       setErro("Não foi possivel carregar as imagens");
-      setDataPhotos({});
       console.log(error);
     } finally {
       setLoadGlobal(false);
@@ -104,7 +101,6 @@ export const StorageDashboardContext = ({ children }) => {
         load,
         loadGlobal,
         erro,
-        dataPhotos,
         dataPhoto,
       }}
     >
