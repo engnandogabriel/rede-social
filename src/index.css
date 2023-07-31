@@ -106,3 +106,17 @@ button, input {
   }
 
 }
+
+.single{
+ grid-template-columns: 1fr !important; 
+ height: auto !important;
+ 
+}
+
+.single > .modalContentDetails{
+  padding: 1rem 0px 0px 0px !important;
+}
+.single > .photoModalImg{
+  grid-row: 1 !important;
+  border-radius: 0.4rem !important;
+}

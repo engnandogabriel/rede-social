@@ -11,8 +11,14 @@ const PhotoComment = (props) => {
 
   return (
     <>
-      <PhotoCommentContent comments={comments} />
-      {loged && <PhotoForm id={props.id} setComments={setComments} />}
+      <PhotoCommentContent comments={comments} single={props.single} />
+      {loged && (
+        <PhotoForm
+          id={props.id}
+          setComments={setComments}
+          single={props.single}
+        />
+      )}
     </>
   );
 };

@@ -3,7 +3,6 @@ import Visualizacao from "../../assets/visualizacao-black.svg";
 
 export const PhotoContentStyled = styled.div`
   margin: auto;
-  /* height: 36rem; */
   background-color: #fff;
   border-radius: 0.2rem;
   display: grid;
@@ -124,7 +123,6 @@ export const PhotoCommentFormStyled = styled.form`
     outline: none;
     border-color: var(--background-one);
     background: #fff;
-
     box-shadow: 0 0 0 3px var(--color-two);
   }
 `;

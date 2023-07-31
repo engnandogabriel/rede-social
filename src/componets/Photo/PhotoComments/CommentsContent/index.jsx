@@ -3,7 +3,6 @@ import { PhotoCommentContentStyled } from "../../../../styles/Photo/index";
 
 const PhotoCommentCon = ({ comments }) => {
   const refComment = useRef(null);
-
   useEffect(() => {
     refComment.current.scrollTop = refComment.current.scrollHeight;
   }, [comments]);

@@ -4,7 +4,7 @@ import ButtonComment from "../../../../componets/Button/ButtonComment/";
 import { GlobalDashboardContext } from "../../../../context/DashboardContext/DashboardContext";
 import { PhotoCommentFormStyled } from "../../../../styles/Photo/index";
 
-const PhotoForm = ({ id, setComments }) => {
+const PhotoForm = ({ id, setComments, single }) => {
   const [comment, setComment] = useState("");
 
   const { photoCommentPost } = useContext(GlobalDashboardContext);
@@ -20,7 +20,10 @@ const PhotoForm = ({ id, setComments }) => {
 
   return (
     // <PhotoCommentFormStyled>
-    <PhotoCommentFormStyled onSubmit={handleSubmit}>
+    <PhotoCommentFormStyled
+      onSubmit={handleSubmit}
+      style={{ margin: `${single ? "1rem 2rem 1rem 0" : ""}` }}
+    >
       <textarea
         value={comment}
         id="comment"

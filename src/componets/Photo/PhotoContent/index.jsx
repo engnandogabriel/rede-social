@@ -9,13 +9,13 @@ import ButtonDeletePhoto from "../PhotoDelete/index";
 import LoadImage from "../../../componets/LoadImage/index";
 import { useContext } from "react";
 
-const PhotoContent = ({ data }) => {
+const PhotoContent = ({ data, single }) => {
   const { dataUser, loged } = useContext(GlobalUserContext);
   const { photo, comments } = data;
 
   if (!photo || !comments) return null;
   return (
-    <PhotoContentStyled>
+    <PhotoContentStyled className={`${single ? "single" : ""}`}>
       <div className="photoModalImg">
         <LoadImage src={photo.src} alt={photo.title} />
       </div>
@@ -39,7 +39,7 @@ const PhotoContent = ({ data }) => {
           </li>
         </ul>
       </div>
-      <PhotoComment id={photo.id} comments={comments} />
+      <PhotoComment id={photo.id} comments={comments} single={true} />
     </PhotoContentStyled>
   );
 };
