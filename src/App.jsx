@@ -9,6 +9,7 @@ import UserPage from "./Pages/UserPage";
 // import ProtectedRoute from "./Routes/ProtectedRoutes";
 import { StorageUserContext } from "./context/UserContext/UserContext";
 import { StorageDashboardContext } from "./context/DashboardContext/DashboardContext";
+import NotFound from "./componets/NotFound";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
               <Route path="/dashboard/*" element={<DashboardRoutes />} />
               <Route path="/foto/:id" element={<SinglePhoto />} />
               <Route path="/perfil/:user" element={<UserPage />} />
+              <Route path="*" element={<NotFound />} />
               {/* <ProtectedRoute
                 path="dashboard/*"
                 element={<DashboardRoutes />}

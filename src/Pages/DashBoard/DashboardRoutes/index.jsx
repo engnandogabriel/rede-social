@@ -7,6 +7,7 @@ import DashboaredStatistics from "../DashboardStatistics";
 
 import { GlobalUserContext } from "../../../context/UserContext/UserContext";
 import { useContext } from "react";
+import NotFound from "../../../componets/NotFound";
 
 const DashboardRoutes = () => {
   const { dataUser } = useContext(GlobalUserContext);
@@ -18,6 +19,7 @@ const DashboardRoutes = () => {
         <Route path="/" element={<Feed user={dataUser.id} />} />
         <Route path="/post" element={<DashboaredPhotoPost />} />
         <Route path="statistics" element={<DashboaredStatistics />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </ContainerDashboard>
   );

@@ -8,6 +8,7 @@ import Create from "../Create/index";
 import { Container, FormConatiner } from "../../../styles/Container";
 
 import { GlobalUserContext } from "../../../context/UserContext/UserContext";
+import NotFound from "../../../componets/NotFound";
 
 const LoginRoutes = () => {
   const { loged } = useContext(GlobalUserContext);
@@ -21,6 +22,7 @@ const LoginRoutes = () => {
           <Route path="/register" element={<Create />} />
           <Route path="/forgot" element={<ForgotPass />} />
           <Route path="/reset" element={<ResetPass />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </FormConatiner>
     </Container>
