@@ -1,13 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import FeedContent from "./FeedContent/index";
 import FeedModal from "./FeedModal/index";
 // import LoadGlobal from "../../componets/LoadGlobal";
 
-import { GlobalDashboardContext } from "../../context/DashboardContext/DashboardContext";
-
 const Feed = ({ user }) => {
-  // const { loadGlobal } = useContext(GlobalDashboardContext);
-
   const [photoModal, setPhotoModal] = useState(null);
   const [pages, setPages] = useState([1]);
   const [infinite, setInfinite] = useState(true);
@@ -37,8 +33,6 @@ const Feed = ({ user }) => {
       window.removeEventListener("scroll", infiniteScroll);
     };
   }, [infinite]);
-
-  // if (loadGlobal) return <LoadGlobal />;
 
   return (
     <>

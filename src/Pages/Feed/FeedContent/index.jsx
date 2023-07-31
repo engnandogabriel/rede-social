@@ -16,7 +16,6 @@ const FeedContent = ({ page, user, setPhotoModal, setInfinite }) => {
       if (user != 0 || user != undefined) {
         const dataFetch = await fetchPhotos(page, user);
         setData(dataFetch);
-        console.log(dataFetch.length);
         if (dataFetch.length < 3) setInfinite(false);
       } else {
         const dataFetch = await fetchPhotos(0);
@@ -29,7 +28,6 @@ const FeedContent = ({ page, user, setPhotoModal, setInfinite }) => {
 
   if (erro) return <Title>{erro}</Title>;
   if (loadGlobal) return <LoadGlobal />;
-
   if (data)
     return (
       <FeedUlStyled className="aniamteLeft">
