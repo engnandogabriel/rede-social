@@ -17,7 +17,6 @@ const DashboaredStatistics = () => {
     statics()
   }, []);
 
-  console.log(statics)
 
   if (loadGlobal) return <LoadGlobal />;
   if(statics) return <React.Suspense fallback={<div></div>}><Graphic data={statics}/></React.Suspense>;

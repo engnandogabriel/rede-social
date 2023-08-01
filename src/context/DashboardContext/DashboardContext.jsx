@@ -29,8 +29,7 @@ export const StorageDashboardContext = ({ children }) => {
       }
       throw new Error("Token inválido");
     } catch (error) {
-      console.log("erro");
-      console.log(error);
+      setErro(error)
       setErro(error);
     } finally {
       setLoad(false);
@@ -46,7 +45,6 @@ export const StorageDashboardContext = ({ children }) => {
       return response;
     } catch (error) {
       setErro("Não foi possivel carregar as imagens");
-      console.log(error);
     } finally {
       setLoadGlobal(false);
     }
@@ -72,8 +70,8 @@ export const StorageDashboardContext = ({ children }) => {
       const response = await (await PHOTO_COMMENT_POST(id, body, token)).json();
       return response;
     } catch (error) {
-      console.log(error);
-    } finally {
+      setErro(error)
+      } finally {
       setLoad(false);
     }
   }
@@ -85,7 +83,7 @@ export const StorageDashboardContext = ({ children }) => {
       const response = await DELTE_PHOTO(id, token);
       return response;
     } catch (error) {
-      console.log(error);
+      setErro(error)
     } finally {
       setLoad(false);
     }
