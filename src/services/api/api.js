@@ -86,3 +86,12 @@ export const DELTE_PHOTO = async (id, token) => {
     },
   });
 };
+
+export const GET_STATITCS = async (token) => {
+  return await fetch(`${url}/api/stats`, {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });
+};

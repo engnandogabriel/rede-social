@@ -14,26 +14,30 @@ import NotFound from "./componets/NotFound";
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <StorageUserContext>
-          <StorageDashboardContext>
-            <Header />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="login/*" element={<LoginRoutes />} />
-              <Route path="/dashboard/*" element={<DashboardRoutes />} />
-              <Route path="/foto/:id" element={<SinglePhoto />} />
-              <Route path="/perfil/:user" element={<UserPage />} />
-              <Route path="*" element={<NotFound />} />
-              {/* <ProtectedRoute
+      <div className="App">
+        <BrowserRouter>
+          <StorageUserContext>
+            <StorageDashboardContext>
+              <Header />
+              <div className="AppBody">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="login/*" element={<LoginRoutes />} />
+                  <Route path="/dashboard/*" element={<DashboardRoutes />} />
+                  <Route path="/foto/:id" element={<SinglePhoto />} />
+                  <Route path="/perfil/:user" element={<UserPage />} />
+                  <Route path="*" element={<NotFound />} />
+                  {/* <ProtectedRoute
                 path="dashboard/*"
                 element={<DashboardRoutes />}
               /> */}
-            </Routes>
-            <Footer />
-          </StorageDashboardContext>
-        </StorageUserContext>
-      </BrowserRouter>
+                </Routes>
+              </div>
+              <Footer />
+            </StorageDashboardContext>
+          </StorageUserContext>
+        </BrowserRouter>
+      </div>
     </>
   );
 };

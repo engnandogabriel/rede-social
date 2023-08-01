@@ -38,7 +38,7 @@ const Create = () => {
               {...password}
             />
           </div>
-          {erro && <TextError>{erro}</TextError>}
+          {erro && <TextError>E-mail já cadastrado! Experimente outro e-mail. </TextError>}
           {load ? <Button>Carregando</Button> : <Button>Cadastrar</Button>}
         </form>
       </div>

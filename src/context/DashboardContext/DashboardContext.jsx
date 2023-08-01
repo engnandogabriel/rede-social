@@ -5,6 +5,7 @@ import {
   PHOTO_GET,
   PHOTO_COMMENT_POST,
   DELTE_PHOTO,
+  GET_STATITCS
 } from "../../services/api/api";
 import { useNavigate } from "react-router-dom";
 
@@ -90,6 +91,19 @@ export const StorageDashboardContext = ({ children }) => {
     }
   }
 
+  async function getStatics() {
+    try {
+      setErro(null)
+      setLoadGlobal(true)
+      const token = window.localStorage.getItem('token')
+   return await (await GET_STATITCS(token)).json()
+    } catch (error) {
+      setErro(erro)
+    }finally{
+      setLoadGlobal(false)
+    }
+  }
+
   return (
     <GlobalDashboardContext.Provider
       value={{
@@ -98,6 +112,7 @@ export const StorageDashboardContext = ({ children }) => {
         fetchOnePhoto,
         photoCommentPost,
         deletePhoto,
+        getStatics,
         load,
         loadGlobal,
         erro,

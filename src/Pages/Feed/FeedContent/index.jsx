@@ -27,7 +27,7 @@ const FeedContent = ({ page, user, setPhotoModal, setInfinite }) => {
   }, [user, page, setInfinite]);
 
   if (erro) return <Title>{erro}</Title>;
-  if (loadGlobal) return <LoadGlobal />;
+  // if (loadGlobal) return <LoadGlobal />;
   if (data)
     return (
       <FeedUlStyled className="aniamteLeft">
