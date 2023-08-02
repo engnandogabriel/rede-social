@@ -1,106 +1,62 @@
 # Rede Social para Cachorro
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/engnandogabriel/rede-social?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/engnandogabriel/rede-social?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/engnandogabriel/rede-social?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/engnandogabriel/rede-social?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/engnandogabriel/rede-social?style=for-the-badge)
 
 <img src="imagem.png" alt="Exemplo imagem">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Projeto desenvolvido após a conclusão do curso de React-JS do Origamid. O projeto tem o intuito desenvolver uma rede social para cachorros como forma de
+> praticar os conhecimentos adquiridos durante o curso.
 
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+- [x] Otimização dos gráficos
+- [x] Sistema Responsivo
+- [ ] Implementar a função de "Esqueceu a senha"
+
 
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-* Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-* Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-* Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+* Você instalou a versão 18.3 do node usada nesse projeto
+* Você tem uma máquina `<Windows / Linux / Mac>`. 
 
-## 🚀 Instalando <nome_do_projeto>
+## 🚀 Instalando rede-scoal
 
-Para instalar o <nome_do_projeto>, siga estas etapas:
+Para instalar o projeto <rede-social>, siga estas etapas:
 
 Linux e macOS:
+* abra o projeto no vscode
+* execute os comandos no terminal
 ```
-<comando_de_instalação>
+npm install
+npm run dev
 ```
 
 Windows:
+* abra o projeto no vscode
+* execute os comandos no terminal
 ```
-<comando_de_instalação>
-```
-
-## ☕ Usando <nome_do_projeto>
-
-Para usar <nome_do_projeto>, siga estas etapas:
-
-```
-<exemplo_de_uso>
+npm install
+npm run dev
 ```
 
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
+## 🔧Tecnologias utilizadas
+* [React](https://vitejs.dev/guide/) - Uma biblioteca JS para desenvolvimento de sites.
+* [ContextAPI](https://reactjs.org/docs/context.html) - permite gerenciar estados globais de aplicativos
+* [React-Router-Dom](https://reactrouter.com/en/main) - bbiblioteca usada resolver problemas de rotas para as páginas de um site e tornar o desenvolvimento muito mais simples e escalável
+* [Styled-Components](https://styled-components.com/) - biblioteca para estilização de sites com CSS
+* [Victory](https://formidable.com/open-source/victory/) - bibliota para geração de componentes com gráficos
+* [Axios](https://axios-http.com/ptbr/docs/intro) - biblioteca usada para consumir API (além dela, utilizou-se fetch)
 
-## 📫 Contribuindo para <nome_do_projeto>
 
-Para contribuir com <nome_do_projeto>, siga estas etapas:
 
-1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <nome_branch>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
+# ✒️Autor
 
-Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
-
-## 🤝 Colaboradores
-
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="#">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
-        <sub>
-          <b>Iuri Silva</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
-        <sub>
-          <b>Mark Zuckerberg</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
-        <sub>
-          <b>Steve Jobs</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-## 😄 Seja um dos contribuidores
-
-Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
-
-## 📝 Licença
-
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+⌨️ com ❤️ por [Nando Gabriel](https://github.com/engnandogabriel/) 😊
