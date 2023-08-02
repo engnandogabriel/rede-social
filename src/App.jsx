@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Pages/Header/index";
 import Footer from "./Pages/Footer/index";
-import Home from "./Pages/home/index";
+import Home from "./Pages/Home/index";
 import LoginRoutes from "./Pages/Acconut/LoginRoutes/index";
 import DashboardRoutes from "./Pages/DashBoard/DashboardRoutes";
 import SinglePhoto from "./componets/Photo/SinglePhoto";

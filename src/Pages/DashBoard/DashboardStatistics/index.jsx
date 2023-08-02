@@ -2,7 +2,6 @@ import { lazy, useContext, useEffect, useState } from "react";
 import { GlobalDashboardContext } from "../../../context/DashboardContext/DashboardContext";
 import LoadGlobal from "../../../componets/LoadGlobal";
 import React from "react";
-// import Graphic from "../../../componets/Graphic";
 const Graphic = lazy(() => import('../../../componets/Graphic'))
 
 const DashboaredStatistics = () => {
