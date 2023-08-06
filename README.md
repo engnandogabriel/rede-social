@@ -27,7 +27,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você instalou a versão 18.3 do node usada nesse projeto
 * Você tem uma máquina `<Windows / Linux / Mac>`. 
 
-## 🚀 Instalando rede-scoal
+## 🚀 Instalando rede-social
 
 Para instalar o projeto <rede-social>, siga estas etapas:
 
