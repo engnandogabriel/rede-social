@@ -11,6 +11,8 @@
 > Projeto desenvolvido após a conclusão do curso de React-JS do Origamid. O projeto tem o intuito desenvolver uma rede social para cachorros como forma de
 > praticar os conhecimentos adquiridos durante o curso.
 
+[Clique aqui para acessar o projeto em produção](https://rede-social-mhwp.vercel.app/)
+
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
